@@ -81,3 +81,17 @@ taskkill /F /PID {applicationPID}
 
 Примеры запросов приведены в коллекции Postman (ссылка в начале описания или файл Validator.postman_collection.json в репозитории). <br>
 Также стоит следить за размером папки с данными отчетов о валидации (переменная reportPath), поскольку данные отчеты не удаляются автоматически.
+
+
+## Запуск в Docker
+
+### Сборка образа
+
+```
+docker build --pull --rm -f "Dockerfile" -t schematronvalidator:latest "."
+```
+
+### Запуск контейнера
+```
+docker run --rm -it -p 8080:8080 schematronvalidator:latest
+```
